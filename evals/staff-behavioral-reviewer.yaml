@@ -1,0 +1,96 @@
+version: 1
+skill: staff-behavioral-reviewer
+purpose: Verify rigorous but fair Staff+ calibration without moving goalposts.
+
+cases:
+  - id: large-project-weak-ownership
+    mode: review
+    input: |
+      A large team ships a major product with strong metrics. The candidate says "we" throughout and names no personal decision, changed stakeholder behavior, or causal contribution.
+    expected:
+      verdict_any_of:
+        - Borderline
+        - Below Staff+ for this prompt
+        - Insufficient evidence
+      required:
+        - Separate impressive project scale from demonstrated candidate level.
+        - Identify ownership and causality as the main gaps.
+      forbidden:
+        - A strong verdict based on employer or project prestige.
+
+  - id: corrected-story-fair-rereview
+    mode: re-review
+    input: |
+      A prior review identified weak estimate attribution, unclear peer commitment, and no durable effect. The revision attributes estimates to platform leads, shows the peer approved and staffed the work, and identifies a mechanism reused later.
+    expected:
+      required:
+        - Mark each prior objection resolved, partially resolved, or unresolved.
+        - Recalibrate the verdict using the original standard.
+      forbidden:
+        - Inventing unrelated new requirements.
+        - Reopening resolved objections without contradictory evidence.
+
+  - id: architecture-not-investigation
+    mode: review
+    input: |
+      Asked for a complex technical investigation, the candidate describes leading a sophisticated architecture but gives no symptom, diagnostic evidence, root cause, fix, or validation.
+    expected:
+      required:
+        - Credit architecture leadership as an adjacent competency.
+        - Mark investigation evidence as missing.
+        - Ask for diagnosis, consequential change, safety, and validation.
+      forbidden:
+        - Full question-fit credit because the design is complex.
+
+  - id: sustained-action-can-repair-trust
+    mode: review
+    input: |
+      There was no ceremonial apology. The candidate accepted partner feedback, removed a harmful process, protected both discovery and execution, backed the partner's controversial proposal after examining it, and repeatedly kept commitments.
+    expected:
+      required:
+        - Accept sustained partner-directed behavior as a legitimate repair mechanism.
+        - Evaluate whether later confidence or changed behavior is demonstrated.
+      forbidden:
+        - Requiring a ceremonial apology as the only valid repair.
+        - Treating shipment alone as sufficient.
+
+  - id: mentoring-not-org-capability
+    mode: review
+    input: |
+      The candidate gives two strong mentoring examples but no reusable mechanism, adoption, or independent behavior at organizational scale.
+    expected:
+      required:
+        - Credit individual development.
+        - Reject the broader organizational-capability claim.
+        - Ask for a repeatable mechanism and adoption evidence.
+      forbidden:
+        - Treating two anecdotes as an organizational multiplier.
+
+  - id: causal-result-calibration
+    mode: review
+    input: |
+      Reliability incidents declined after a project, but there was no experiment or analysis separating the project from other concurrent changes.
+    expected:
+      required:
+        - Credit the temporal operational signal.
+        - Narrow causal language unless stronger evidence exists.
+        - Distinguish shipped output, leading indicator, and causal outcome.
+      forbidden:
+        - Rejecting the result entirely.
+        - Claiming proven causality.
+
+  - id: company-rubric-humility
+    mode: company-calibration
+    input: |
+      A candidate asks for calibration to a named company's current Staff loop, but only an undated community blog post is available.
+    expected:
+      required:
+        - Prefer recruiter-confirmed or official current guidance.
+        - Label the blog mapping as a heuristic.
+        - Preserve general Staff+ evidence standards.
+      forbidden:
+        - Presenting the community post as official policy.
+
+evaluation_notes:
+  - Judge calibration and evidence discipline, not exact phrasing.
+  - The reviewer must say whether the story counts as Staff+ evidence for the primary prompt.

@@ -1,0 +1,93 @@
+version: 1
+skill: staff-behavioral-coach
+purpose: Verify that the coach produces precise Staff+ stories without inventing evidence or confusing adjacent competencies.
+
+cases:
+  - id: question-match-over-project-prestige
+    mode: story-selection
+    input: |
+      The candidate has a famous cross-company launch but cannot identify a personal decision. They also have a smaller incident where they diagnosed a non-obvious race, designed a safe fix, and prevented recurrence. The question asks for a complex technical investigation.
+    expected:
+      required:
+        - Select the incident or mark missing facts, rather than defaulting to the famous launch.
+        - Require symptom, evidence, root cause, change, safety boundary, and validation.
+        - Explain that project prestige does not establish question fit.
+      forbidden:
+        - Invented metrics or implementation details.
+        - Treating architecture or coordination alone as root-cause work.
+
+  - id: fact-safe-carl
+    mode: rewrite
+    input: |
+      A candidate knows the architecture shipped and reduced client complexity, but has no incident-rate or user-adoption metric. They want a Staff+ conflict story.
+    expected:
+      required:
+        - Produce a complete concise CARL with conflict behavior and architectural consequence.
+        - Label the result as shipped architectural simplification.
+        - Avoid requiring a user metric inappropriate to the claim.
+      forbidden:
+        - Claims of fewer incidents, higher adoption, or bug-free delivery.
+
+  - id: multi-team-versus-xfn
+    mode: audit
+    input: |
+      One engineering team worked with Product, Design, and Analytics. The candidate calls this a multiple-engineering-team alignment story, but no other engineering team changed a decision.
+    expected:
+      required:
+        - Narrow the claim to cross-functional leadership.
+        - Ask which distinct teams changed behavior before labeling it multi-team.
+      forbidden:
+        - Awarding multi-team scope from meeting attendance.
+
+  - id: technical-depth-not-experiment-only
+    mode: rewrite
+    input: |
+      A performance story reports an A/B-test lift but omits the main-thread bottleneck, ordering constraint, code change, and regression risk.
+    expected:
+      required:
+        - Preserve the experiment as impact validation.
+        - Mark the technical mechanism and safety evidence as missing.
+        - Ask targeted questions rather than fabricate a plausible fix.
+      forbidden:
+        - Calling experimentation itself complex technical problem-solving.
+
+  - id: failure-keeps-the-harm
+    mode: rewrite
+    input: |
+      The candidate introduced a process that increased blame and burnout, then recovered delivery. Their draft spends most of its time on the successful project afterward.
+    expected:
+      required:
+        - State the candidate's mistake and harm plainly.
+        - Include accountability, repair, prevention, and later proof of changed behavior.
+        - Keep successful delivery from erasing the failure.
+      forbidden:
+        - Reframing the mistake as an unavoidable external problem.
+
+  - id: ai-accountability-boundary
+    mode: evidence-recovery
+    input: |
+      AI helped with a complex refactor, but the candidate has not explained task decomposition, verification, incorrect output, attributable advantage, or reuse.
+    expected:
+      required:
+        - Separate known shipped work from unproven AI impact.
+        - Ask for human decisions, trust checks, iteration, advantage, consequence, and scaling.
+        - Allow the example to remain continuous-learning evidence if broader impact is absent.
+      forbidden:
+        - Inventing a speedup, AI failure, adoption, or quality result.
+
+  - id: concise-followups
+    mode: followup-bank
+    input: |
+      The first-pass story is complete. Ownership and outcome are known, but rollout safeguards and long-term adoption are not.
+    expected:
+      required:
+        - Produce five to eight targeted questions with concise answers.
+        - Use specific fill markers for unknown safeguards and adoption.
+        - Keep answers inside the story's causal boundary.
+      forbidden:
+        - Repeating the entire story for each follow-up.
+        - Plausible but unverified rollout claims.
+
+evaluation_notes:
+  - Judge semantic compliance rather than exact headings.
+  - A passing answer is concise, fact-safe, and matched to the exact prompt.

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Staff+ Behavioral Coach"
+  short_description: "Build evidence-rich Staff+ interview stories"
+  default_prompt: "Use $staff-behavioral-coach to turn these facts into a precise Staff+ behavioral story."

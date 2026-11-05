@@ -1,0 +1,4 @@
+interface:
+  display_name: "Staff+ Behavioral Reviewer"
+  short_description: "Pressure-test Staff+ behavioral evidence"
+  default_prompt: "Use $staff-behavioral-reviewer to assess this story against the exact interview question."
