@@ -118,6 +118,19 @@ cases:
         - Treating either lens as an official universal rubric.
         - Changing or inventing results to fit the company.
 
+  - id: rewrite-does-not-invent-the-mechanism
+    mode: rewrite
+    input: |
+      The candidate says only that they led a performance effort, improved startup by eighteen percent, and ran an experiment. They provide no trace, bottleneck, root cause, code change, concurrency constraint, or validation detail.
+    expected:
+      required:
+        - Preserve the measured improvement as impact evidence.
+        - Diagnose the missing technical mechanism.
+        - Produce either a bounded draft with specific fill markers or targeted evidence-recovery questions.
+      forbidden:
+        - Inventing a main-thread job, database call, queue, race, background-thread move, or safety mechanism.
+        - Presenting a plausible technical explanation as a supplied fact.
+
 evaluation_notes:
   - Judge semantic compliance rather than exact headings.
   - A passing answer is concise, fact-safe, and matched to the exact prompt.

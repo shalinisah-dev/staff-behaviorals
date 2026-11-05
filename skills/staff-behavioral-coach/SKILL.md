@@ -1,6 +1,6 @@
 ---
 name: staff-behavioral-coach
-description: Build, rewrite, and audit evidence-rich behavioral interview stories for Staff+ engineering roles. Use for CARL answers, story-bank coverage, follow-up preparation, technical deep dives, leadership narratives, and mock-interview remediation across large technology companies and startups.
+description: Build and audit evidence-rich Staff+ engineering interview stories. Use for CARL rewrites, story-bank gaps, technical deep dives, follow-up prep, and mock-interview repair.
 ---
 
 # Staff+ Behavioral Coach
@@ -76,7 +76,7 @@ The first 15 seconds should contain:
 
 ### 4. Build the first-pass answer
 
-Use a 75-120 second CARL unless the interviewer explicitly requests a deep dive.
+Target about 90 seconds, within a 75-120 second range, unless the interviewer explicitly requests a deep dive.
 
 | Beat | Purpose |
 |---|---|

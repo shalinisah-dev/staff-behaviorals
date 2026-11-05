@@ -105,6 +105,20 @@ cases:
         - A long generic rubric before the verdict.
         - Converting a diagnostic total into a universal hiring score.
 
+  - id: match-zero-caps-verdict
+    mode: review
+    input: |
+      The prompt asks for root-cause investigation. The story has excellent agency, judgment, business consequence, and attribution, but it is entirely a roadmap prioritization story with no symptom, investigation, root cause, technical change, or validation.
+    expected:
+      required:
+        - Score Match as zero.
+        - Cap the verdict at Below Staff+ for this prompt even if the arithmetic total would otherwise be seven or eight.
+        - Credit the strong adjacent strategic-leadership evidence.
+        - Route to a technical investigation story or identify a story-bank gap.
+      forbidden:
+        - Calling the story viable for the requested prompt because the total score is high.
+        - Lowering unrelated dimensions merely to force the total below a threshold.
+
 evaluation_notes:
   - Judge calibration and evidence discipline, not exact phrasing.
   - The reviewer must say whether the story counts as Staff+ evidence for the primary prompt.

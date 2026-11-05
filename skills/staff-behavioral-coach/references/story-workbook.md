@@ -47,7 +47,7 @@ What mechanism, standard, or later behavior changed?
 ## Rehearsal checks
 
 - [ ] Headline lands within 15 seconds.
-- [ ] First pass is under two minutes.
+- [ ] First pass is about 90 seconds and stays within a 75-120 second range.
 - [ ] Context is no more than two sentences.
 - [ ] "I" and "we" accurately separate ownership.
 - [ ] At least one alternative or tradeoff is visible.

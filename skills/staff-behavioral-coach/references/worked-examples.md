@@ -1,6 +1,6 @@
 # Worked Synthetic Examples
 
-These examples are invented and demonstrate transformations, not scripts to memorize.
+These examples are invented and demonstrate transformations, not scripts to memorize. Each stronger version uses only the weak input plus facts explicitly supplied in its evidence-recovery exchange.
 
 ## 1. Technical problem: replace outcome-only language with mechanism
 
@@ -13,6 +13,20 @@ These examples are invented and demonstrate transformations, not scripts to memo
 - The metric proves consequence, not technical depth.
 - “Led” and “coordinated” hide the candidate's decision.
 - No symptom, root cause, correctness risk, or validation mechanism appears.
+
+### Evidence-recovery exchange
+
+**Coach:** What exact work blocked startup, and what evidence identified it?
+
+**Candidate:** A startup trace showed a derived-data reconciliation job repeatedly blocking the UI thread.
+
+**Coach:** Why couldn't you move the whole job to a background queue?
+
+**Candidate:** Later startup work could observe partially updated state. I separated read-only analysis from the state transition, moved only the safe portion, and kept the ordered write behind an explicit completion boundary.
+
+**Coach:** How did you protect correctness and prove impact?
+
+**Candidate:** We validated startup latency and data consistency before rollout. The measured startup improvement was 18%, and two related workflows reused the boundary.
 
 ### Stronger shape
 
@@ -32,6 +46,20 @@ Why it works: the answer now contains a failure mode, diagnosis, consequential c
 - Meetings and documents are activities, not influence.
 - “On time” does not reveal the candidate's judgment.
 
+### Evidence-recovery exchange
+
+**Coach:** What did each team need, and where did the constraints conflict?
+
+**Candidate:** Client wanted a local design to protect schedule. Security required one authoritative policy state. Platform could staff only a narrow server change. Product would not remove offline recovery.
+
+**Coach:** What did you personally do that changed the decision?
+
+**Candidate:** I documented two viable architectures, built a small proof for the disputed recovery path, and showed that a server-authoritative design met the security requirement with less duplicated client state.
+
+**Coach:** What behavior changed as a result?
+
+**Candidate:** Client accepted an asynchronous UI, Platform staffed the narrow API, Security approved the boundary, and the decision model was reused for the next cross-platform feature.
+
 ### Stronger shape
 
 > Client wanted a local design to protect schedule; Security required one authoritative policy state; Platform could staff only a narrow server change; and Product would not remove offline recovery. I put the four constraints and two viable architectures into one decision record, built a small proof for the disputed recovery path, and used it to show that a server-authoritative design met the security requirement with less duplicated client state. Client accepted an asynchronous UI, Platform staffed the narrow API, and Security approved the boundary. We launched with one source of truth and reused the decision model for the next cross-platform feature.
@@ -49,6 +77,20 @@ Why it works: each team changes a decision, and the shared artifact supports a c
 - The candidate's mistake and harm are vague.
 - Recovery dominates the failure.
 - “Learned to listen” has no later behavioral proof.
+
+### Evidence-recovery exchange
+
+**Coach:** What did you personally get wrong, and what harm did it cause?
+
+**Candidate:** I misdiagnosed a trust problem as an execution problem. Over six weeks, the sprint process turned retrospectives into blame sessions and increased demo-preparation work.
+
+**Coach:** How did you acknowledge and reverse it?
+
+**Candidate:** After partners and engineers challenged the process, I told leadership it was making the situation worse and removed it. I replaced it with listening sessions, short written risk updates, and separate exploratory and committed workstreams.
+
+**Coach:** What result showed the recovery worked, and what proves your behavior changed later?
+
+**Candidate:** Morale and delivery predictability recovered. On my next team, I spent the first month mapping goals and relationships before proposing an operating change. That became my standard entry plan.
 
 ### Stronger shape
 

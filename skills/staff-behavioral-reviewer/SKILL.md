@@ -1,6 +1,6 @@
 ---
 name: staff-behavioral-reviewer
-description: Adversarially review behavioral interview stories for Staff+ engineering evidence. Use to pressure-test question fit, ownership, technical depth, influence, causality, level, delivery, and story-bank coverage across large technology companies and startups.
+description: Pressure-test Staff+ engineering interview stories for question fit, ownership, technical depth, influence, causality, level, and credibility.
 ---
 
 # Staff+ Behavioral Reviewer
@@ -29,10 +29,16 @@ Then score five dimensions from 0-2:
 
 Use the total as a diagnostic, not a universal hiring score:
 
-- **9-10:** strong evidence for this prompt;
+- **9-10:** strong evidence for this prompt, only when Match = 2;
 - **7-8:** viable, with one material gap;
 - **5-6:** adjacent or under-evidenced;
 - **0-4:** choose another story or recover core facts.
+
+Question match is a gate:
+
+- **Match = 0:** cap the verdict at **Below Staff+ for this prompt**, regardless of total. Route to another story or state the bank gap.
+- **Match = 1:** cap the verdict at **Borderline**, regardless of total. Name the evidence needed for a full match.
+- **Match = 2:** use the total normally.
 
 ## Review order
 
@@ -43,7 +49,7 @@ Use the total as a diagnostic, not a universal hiring score:
 5. **Causality:** Is the claimed result attributable to the intervention?
 6. **Quality:** Are correctness, reliability, privacy, safety, maintainability, and rollout risk treated as outcomes?
 7. **Durability:** What continued without the candidate's constant involvement?
-8. **Communication:** Is the headline clear within 15 seconds and the first pass under two minutes?
+8. **Communication:** Is the headline clear within 15 seconds and the first pass about 90 seconds, within a 75-120 second range?
 
 Read [references/review-rubric.md](references/review-rubric.md) for prompt-specific traps and level calibration.
 
