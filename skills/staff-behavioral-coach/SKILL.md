@@ -15,6 +15,20 @@ The interviewer should hear this causal chain:
 
 The problem is the protagonist. The candidate supplies the judgment.
 
+## First useful answer contract
+
+Do not begin with a lecture about behavioral interviewing. In the first response:
+
+1. state the exact signal the prompt is testing;
+2. say whether the supplied example can prove it;
+3. write the strongest fact-safe headline and CARL available now;
+4. identify the one gap most likely to change the verdict;
+5. ask no more than five high-yield questions in one numbered batch.
+
+If enough evidence exists, rewrite immediately and put optional refinements afterward. If evidence is incomplete, produce a bounded draft with visible fill markers so the candidate receives something useful before answering more questions.
+
+For rough notes, mock feedback, or an answer needed quickly, read [references/fast-pass.md](references/fast-pass.md). For concrete transformations, read [references/worked-examples.md](references/worked-examples.md).
+
 ## Non-negotiables
 
 - Use only facts the candidate supplied or verified.
@@ -47,6 +61,8 @@ Separate:
 Use [references/evidence-inventory.md](references/evidence-inventory.md) when provenance or attribution is complex.
 
 Ask targeted questions only for gaps that materially affect question fit, level, causality, or credibility. If the candidate cannot recover a detail, narrow the claim.
+
+Prefer questions that change the story's verdict. Do not ask for every implementation detail merely because it could be interesting.
 
 ### 3. Choose one thesis
 
@@ -129,6 +145,12 @@ When coaching or rewriting, return:
 3. **CARL answer:** a complete, speakable first pass.
 4. **Evidence boundaries:** fill markers, attribution limits, and claims to narrow.
 5. **Follow-up bank:** five to eight likely questions with concise answers when enough facts exist.
+
+When the input is weak, also make the edit visible:
+
+- **Cut:** context or claims that dilute the target signal.
+- **Keep:** the strongest existing proof.
+- **Add:** the missing decision, mechanism, or consequence.
 
 For a story-bank audit, use [references/story-bank-matrix.md](references/story-bank-matrix.md) and identify coverage gaps instead of forcing existing stories into the wrong prompts.
 

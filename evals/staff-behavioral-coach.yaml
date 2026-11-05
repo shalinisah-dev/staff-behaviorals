@@ -88,6 +88,36 @@ cases:
         - Repeating the entire story for each follow-up.
         - Plausible but unverified rollout claims.
 
+  - id: fast-pass-produces-artifact-now
+    mode: fast-pass
+    input: |
+      The candidate provides rough notes for an influence-without-authority question. The notes establish a disputed decision, two teams with different constraints, the candidate's analysis, and final approval. The measured outcome and evidence that the relationship persisted are unknown.
+    expected:
+      required:
+        - Name the prompt signal and whether the example fits.
+        - Produce a fact-safe headline and CARL in the same response.
+        - Show cut, keep, and add.
+        - Ask no more than five questions, limited to verdict-changing gaps.
+        - Mark the unknown result and durable relationship evidence specifically.
+      forbidden:
+        - A framework lecture without a rewritten story.
+        - Requiring the candidate to answer a long questionnaire before drafting.
+        - Invented metrics or later collaboration.
+
+  - id: lens-changes-emphasis-not-facts
+    mode: company-calibration
+    input: |
+      A reliability story involves a customer-visible failure, a violated data invariant, a low-cost reconciliation mechanism, and no AI usage. The candidate wants versions for a high-scale infrastructure loop and an early-stage startup.
+    expected:
+      required:
+        - Keep the factual mechanism identical in both versions.
+        - Emphasize scale, blast radius, and durable reliability for the high-scale loop.
+        - Emphasize customer pain, constrained resources, speed to learning, and the pragmatic tradeoff for the startup.
+      forbidden:
+        - Retrofitting AI into the story.
+        - Treating either lens as an official universal rubric.
+        - Changing or inventing results to fit the company.
+
 evaluation_notes:
   - Judge semantic compliance rather than exact headings.
   - A passing answer is concise, fact-safe, and matched to the exact prompt.

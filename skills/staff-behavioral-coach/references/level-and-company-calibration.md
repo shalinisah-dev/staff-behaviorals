@@ -30,7 +30,25 @@ Interview loops change. Use this order:
 3. official current company guidance;
 4. the general Staff+ signals above.
 
-Large companies often emphasize structured evidence, cross-team influence, and calibrated level. Startups may put more weight on speed, range, direct business consequence, constrained resources, and willingness to operate across boundaries. Neither removes the need for technical judgment, quality, or honest attribution.
+Then apply the closest interview lens. These are answer-shaping heuristics, not claims about a company's official rubric.
+
+| Interview lens | Put in the headline | Evidence to surface | Do not over-index on |
+|---|---|---|---|
+| High-scale product or infrastructure | User consequence plus the direction, architecture, or investment the candidate changed | Cross-team behavior, quality at scale, measurable impact, durable leverage | Stakeholder count and internal process |
+| Principles-heavy loop | The real tension between two good principles and the choice made | Specific behavior, downside accepted, counterexample, result | Reciting value names without evidence |
+| AI lab or AI-native team | The uncertain technical or product frontier and how learning was made trustworthy | Evals, safety and privacy boundaries, iteration speed, human accountability, mission consequence | Tool usage and generated-code volume |
+| Startup or early-stage company | Customer or business pain and the fastest responsible path to learning | Resource constraint, hands-on range, reversible risk, customer or revenue consequence | Large-company ceremony and abstract organizational scale |
+
+## Same facts, different emphasis
+
+Suppose the candidate introduced a self-healing repair job after finding stale derived data:
+
+- **High-scale lens:** emphasize the violated invariant, production blast radius, reconciliation design, and reliability mechanism reused elsewhere.
+- **Principles lens:** emphasize why the candidate fixed both the immediate bug and the systemic gap despite schedule pressure.
+- **AI-native lens:** if AI was genuinely used, emphasize what it accelerated, how the candidate verified the repair logic, and what evaluation caught unsafe output.
+- **Startup lens:** emphasize customer pain, the low-cost repair path, operational load avoided, and why periodic reconciliation was the right tradeoff now.
+
+The facts do not change. The first sentence, selected tradeoff, and result ordering do.
 
 When mapping to a named company:
 

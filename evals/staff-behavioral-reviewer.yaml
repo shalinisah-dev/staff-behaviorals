@@ -91,6 +91,20 @@ cases:
       forbidden:
         - Presenting the community post as official policy.
 
+  - id: actionable-first-screen
+    mode: review
+    input: |
+      The prompt asks for technical root-cause investigation. The story shows a strong architecture decision and a successful launch but no observed symptom, diagnostic evidence, or proven root cause.
+    expected:
+      required:
+        - Begin with question requires, story proves, and highest-leverage fix.
+        - Score match, agency, judgment, consequence, and credibility from zero to two.
+        - Credit the architecture evidence while making the prompt mismatch unmistakable.
+        - Identify root-cause evidence as the single highest-leverage fix.
+      forbidden:
+        - A long generic rubric before the verdict.
+        - Converting a diagnostic total into a universal hiring score.
+
 evaluation_notes:
   - Judge calibration and evidence discipline, not exact phrasing.
   - The reviewer must say whether the story counts as Staff+ evidence for the primary prompt.
